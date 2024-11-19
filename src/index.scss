@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --primary-color: #3F51B5;
+}
+.dark-mode{
+  --primary-color: #2c3e50;
+}
+body {
+  background: #fcf9f4;
+  font-family: work sans, sans-serif;
+}

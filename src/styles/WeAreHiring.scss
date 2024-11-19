@@ -1,0 +1,245 @@
+.we-are-hiring {
+  display: flex;
+  height: 100vh;
+
+  .left-box {
+    background-color: white;
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    box-sizing: border-box;
+
+    .image-illustration {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex: 0 0 60%;
+    border-radius: 50px 0 0 50px;
+    background: var(--primary-color);
+
+    h1 {
+      text-align: center;
+      font-family: "IBM Plex Serif";
+      font-size: 75px;
+    }
+
+    label {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .sticky-label {
+      background: #fac626;
+      padding: 7px 20px;
+      border-radius: 20px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #353535;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .explore-button,
+    .custom-select {
+      background-color: white;
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      transition: all 0.25s ease-in-out;
+      box-sizing: border-box;
+      outline: none;
+      cursor: pointer;
+      min-width: 350px;
+      text-align: center;
+      margin-top: 30px;
+      border-radius: 3px;
+
+      &:hover {
+        background: transparent;
+        color: white;
+        border-color: white;
+
+        > div {
+          transition: transform 0.35s ease-in-out;
+          transform: translateX(15px);
+        }
+      }
+    }
+
+    .custom-select {
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 47px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+
+  .help-and-support {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .help-and-support-label {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    svg {
+      cursor: pointer;
+      z-index: 1;
+      position: relative;
+      animation: pulse-animation 2s infinite;
+      border-radius: 50%;
+    }
+
+    ul {
+      position: absolute;
+      right: 0;
+      list-style: none;
+      bottom: 0;
+      white-space: nowrap;
+      margin-bottom: 36px;
+      color: black;
+      font-size: 14px;
+      font-family: "IBM Plex Serif", sans-serif;
+      min-width: 120px;
+      visibility: hidden;
+      opacity: 0;
+      transition: all ease 0.25s;
+      box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 14%);
+
+      &::after {
+        content: "";
+        height: 7px;
+        width: 7px;
+        display: block;
+        position: absolute;
+        background: white;
+        transform: translateY(-50%) rotate(45deg);
+        right: 5px;
+        box-shadow: 1px 1px 1px 0 rgb(0 0 0 / 14%);
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: inherit;
+          padding: 5px 10px;
+          display: block;
+          background-color: white;
+        }
+      }
+    }
+
+    &:hover ul {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .right-box h1 {
+    font-size: 62px;
+  }
+
+  .explore-button,
+  .custom-select {
+    min-width: 310px;
+  }
+
+  .right-box label {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .we-are-hiring {
+    flex-direction: column-reverse;
+    height: 100dvh;
+    .right-box {
+      border-radius: 0;
+      padding: 88px 40px 40px;
+      height: 50vh;
+      .help-and-support {
+        .help-and-support-label {
+          display: none;
+        }
+        svg path {
+          fill: var(--primary-color);
+        }
+      }
+
+      .explore-button,
+      .custom-select {
+        min-width: 262px;
+        font-size: 14px;
+        padding: 13px 15px;
+        min-height: 47px;
+      }
+      h1 {
+        font-size: 38px;
+        max-width: 200px;
+        line-height: 105%;
+        padding-bottom: 11px;
+      }
+      label {
+        text-align: center;
+        font-size: 14px;
+        max-width: 300px;
+      }
+      .sticky-label {
+        font-size: 12px;
+        padding: 5px 9px;
+        top: 0;
+        border-radius: 0;
+        width: 100%;
+        left: 0;
+        text-align: center;
+      }
+    }
+    .left-box {
+      height: 50vh;
+    }
+  }
+}

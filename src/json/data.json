@@ -1,0 +1,86 @@
+{
+    "1": [
+      {
+        "country": "China",
+        "country_code": "CN"
+      },
+      {
+        "country": "India",
+        "country_code": "IN"
+      },
+      {
+        "country": "Japan",
+        "country_code": "JP"
+      },
+      {
+        "country": "South Korea",
+        "country_code": "KR"
+      },
+      {
+        "country": "Indonesia",
+        "country_code": "ID"
+      },
+      {
+        "country": "Pakistan",
+        "country_code": "PK"
+      },
+      {
+        "country": "Bangladesh",
+        "country_code": "BD"
+      },
+      {
+        "country": "Philippines",
+        "country_code": "PH"
+      },
+      {
+        "country": "Vietnam",
+        "country_code": "VN"
+      },
+      {
+        "country": "Turkey",
+        "country_code": "TR"
+      }
+    ],
+    "2": [
+      {
+        "country": "United Kingdom",
+        "country_code": "GB"
+      },
+      {
+        "country": "Germany",
+        "country_code": "DE"
+      },
+      {
+        "country": "France",
+        "country_code": "FR"
+      },
+      {
+        "country": "Italy",
+        "country_code": "IT"
+      },
+      {
+        "country": "Spain",
+        "country_code": "ES"
+      },
+      {
+        "country": "Poland",
+        "country_code": "PL"
+      },
+      {
+        "country": "Netherlands",
+        "country_code": "NL"
+      },
+      {
+        "country": "Belgium",
+        "country_code": "BE"
+      },
+      {
+        "country": "Sweden",
+        "country_code": "SE"
+      },
+      {
+        "country": "Switzerland",
+        "country_code": "CH"
+      }
+    ]
+  }
