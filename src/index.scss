@@ -5,9 +5,11 @@
 }
 :root{
   --primary-color: #3F51B5;
+  --primary-color-light: rgba(63, 81, 181, 0.2);
 }
 .dark-mode{
   --primary-color: #2c3e50;
+  --primary-color-light: rgba(45, 62, 81,  .10);
 }
 body {
   background: #fcf9f4;
