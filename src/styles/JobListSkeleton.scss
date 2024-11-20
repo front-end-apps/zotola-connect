@@ -1,16 +1,27 @@
 .shimmer {
-    width: 100%;
-    min-height: 34px;
-    background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    min-width: 100px;
+  width: 100%;
+  min-height: 34px;
+  background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  min-width: 100px;
 }
 @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
+  0% {
+    background-position: -200% 0;
   }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@media (max-width: 768px) {
+  .top-0-sm{
+    top: 0!important;
+  }
+  .pl-0-sm{
+    padding-left: 0!important;
+  }
+  .mt-3-sm{
+    margin-top: 3px!important;
+  }
+}
