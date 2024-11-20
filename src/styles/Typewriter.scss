@@ -9,3 +9,12 @@
     top: 0;
     padding: 0 16px;
 }
+@media (max-width: 768px) {
+    .typewriter{
+        span {
+            bottom: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+}

@@ -159,3 +159,98 @@
     margin-top: 8px;
   }
 }
+
+@media (max-width: 768px) {
+  .content-not-found {
+    h3 {
+      font-size: 16px;
+    }
+    h4 {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+  .job-list-container {
+    flex-direction: column;
+    gap: 0;
+    .tab-list {
+      display: flex;
+      overflow: auto;
+      width: calc(100% + 40px);
+      background: #fdf9f5;
+      margin-left: -20px;
+      padding-left: 20px;
+      margin-right: -20px;
+      padding-right: 20px;
+      top: 118px;
+      padding-top: 6px;
+      z-index: 1;
+      li {
+        white-space: nowrap;
+        padding: 10px 14px;
+        display: flex;
+      }
+    }
+    .job-list {
+      width: 100%;
+      padding-top: 0;
+      position: relative;
+      top: 16px;
+      padding-bottom: 16px;
+      .job-list-item {
+        .list {
+          .list-item {
+            flex-direction: column;
+            padding: 14px 15px;
+            border-radius: 3px;
+            .commitment-mobile {
+              display: table;
+              background: #f7f4f4;
+              padding: 4px 9px;
+              margin-right: 10px;
+              border-radius: 15px;
+              text-transform: uppercase;
+              font-size: 10px;
+              font-weight: 600;
+              color: #908f9a;
+              margin-bottom: 6px;
+            }
+            .list-item__right {
+              span:first-child {
+                display: none;
+              }
+              a {
+                max-width: 100%;
+                width: 100%;
+                padding: 10px 23px;
+                font-size: 14px;
+                margin-top: 10px;
+              }
+            }
+            h3 {
+              font-size: 17px;
+            }
+            .labels {
+              padding-top: 0;
+              padding-bottom: 12px;
+              span {
+                margin-right: 0;
+                background: transparent;
+                padding-left: 0;
+                font-size: 9px;
+              }
+            }
+          }
+        }
+        .title {
+          padding-bottom: 12px;
+          font-size: 18px;
+          padding-top: 12px;
+        }
+      }
+   
+    }
+
+
+  }
+}

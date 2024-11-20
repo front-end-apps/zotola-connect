@@ -38,3 +38,12 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .theme-container
+  {
+    font-size: 0;
+    gap: 0;
+    min-width: 57px;
+    margin-left: 10px;
+  }
+}

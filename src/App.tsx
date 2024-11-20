@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation,
+  useLocation
 } from "react-router-dom";
 import WeAreHiring from "./components/WeAreHiring";
 import JoinUs from "./components/JoinUs";
@@ -21,7 +21,7 @@ function App() {
       <HeaderWrapper />
       <Routes>
         <Route path="/" element={<WeAreHiring />} />
-        <Route path="/join-us/" element={<JoinUs />} />
+        <Route path="/join-us" element={<JoinUs />} />
       </Routes>
       <FooterWrapper/>
     </Router>

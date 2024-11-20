@@ -14,7 +14,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ search_job, search_value }) => {
     <div className="toolbar">
       <div className="container">
         <div className="cols">
-          <div className="col">
+          <div className="col flex-1-sm">
             <div className="relative">
               <input type="search" placeholder="" value={search_value} onChange={handleSearchJob} />
               <Typewriter
