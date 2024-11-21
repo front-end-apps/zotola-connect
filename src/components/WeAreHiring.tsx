@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/WeAreHiring.scss";
 import illustration from "../assets/image-illustration.png";
 import ThemeToggle from "./ThemeToggle";
-import CompanyList from '../components/CompanyList'
+import CompanyList from '../components/CompanyList';
+import { useNavigate } from 'react-router-dom';
 
 const WeAreHiring = () => {
   const [companySelected, setCompanySelected] = useState(false);
+  const navigate = useNavigate();
   const handleOnSelect = (value: boolean)=>{
     setCompanySelected(value)
   }
+  useEffect(() => {
+    if (companySelected) {
+      navigate(`/work-with-${localStorage.getItem('companyName')}`);
+    }
+  }, [companySelected, navigate]);
   return (
     <>
       <div className="we-are-hiring">
@@ -24,10 +31,9 @@ const WeAreHiring = () => {
             Explore exciting career opportunities on our innovative platform.
           </label>
           {companySelected ? (
-            <a href="/join-us" className="explore-button">
-              explore opportunities
-              <div>→</div>
-            </a>
+            <div className="explore-button">
+              Redirecting...
+            </div>
           ) : (
            <CompanyList is_selected={handleOnSelect}/>
           )}

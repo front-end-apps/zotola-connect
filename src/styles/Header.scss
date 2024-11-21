@@ -7,6 +7,13 @@ header {
     align-items: center;
     gap: 6px;
     text-transform: capitalize;
+    a{
+      text-decoration: none;
+      color: inherit;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
   .total-jobs {
     background: var(--primary-color);
