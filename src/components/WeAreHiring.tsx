@@ -1,33 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/WeAreHiring.scss";
 import illustration from "../assets/image-illustration.png";
-import companyNames from "../json/company.json";
 import ThemeToggle from "./ThemeToggle";
+import CompanyList from '../components/CompanyList'
 
 const WeAreHiring = () => {
-  const initialCompany = localStorage.getItem("companyName") || "";
-  const [storeCompany, setStoreCompany] = useState<string>(initialCompany);
   const [companySelected, setCompanySelected] = useState(false);
-  const getCompanyNames = () => {
-    return companyNames.map((item) => (
-      <option key={item.name} value={item.name}>
-        {item.name}
-      </option>
-    ));
-  };
-
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setStoreCompany(event.target.value);
-    setCompanySelected(true);
-  };
-  useEffect(() => {
-    localStorage.setItem("companyName", storeCompany);
-  }, [storeCompany]);
+  const handleOnSelect = (value: boolean)=>{
+    setCompanySelected(value)
+  }
   return (
     <>
       <div className="we-are-hiring">
         <div className="left-box">
-          <img className="image-illustration" src={illustration} />
+          <img className="image-illustration" height="270" width="576" src={illustration} />
         </div>
         <div className="right-box">
           <span className="sticky-label">
@@ -43,14 +29,7 @@ const WeAreHiring = () => {
               <div>→</div>
             </a>
           ) : (
-            <select
-              name="options"
-              className="custom-select"
-              onChange={handleSelectChange}
-            >
-              <option value="">Select Company</option>
-              {getCompanyNames()}
-            </select>
+           <CompanyList is_selected={handleOnSelect}/>
           )}
 
           <div className="help-and-support-footer">
