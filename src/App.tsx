@@ -21,7 +21,7 @@ function App() {
       <HeaderWrapper />
       <Routes>
         <Route path="/" element={<WeAreHiring />} />
-        <Route path="/join-us" element={<JoinUs />} />
+        <Route path="/:company" element={<JoinUs />} />
       </Routes>
       <FooterWrapper/>
     </Router>

@@ -1,6 +1,9 @@
 import '../styles/Header.scss';
 import { useState } from 'react';
 import companyIcon from '../assets/company.svg'
+import {
+  Link
+} from "react-router-dom";
 
 const Header = () => {
   const [currentCompany] = useState(localStorage.getItem('companyName'))
@@ -16,7 +19,7 @@ const Header = () => {
             Zotola Connect
             </h1>
             <div className='active-company'>
-              <img src={companyIcon} height="18" width="18" alt="" />{currentCompany}
+              <img src={companyIcon} height="18" width="18" alt="" />{currentCompany ?? <Link to="/"> Select </Link>}
             </div>
           </div>
         </div>
