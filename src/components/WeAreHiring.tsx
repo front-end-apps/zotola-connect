@@ -13,7 +13,7 @@ const WeAreHiring = () => {
   }
   useEffect(() => {
     if (companySelected) {
-      navigate(`/work-with-${localStorage.getItem('companyName')}`);
+      navigate(`/explore-opportunities`);
     }
   }, [companySelected, navigate]);
   return (
