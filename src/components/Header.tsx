@@ -1,6 +1,9 @@
-import '../styles/Header.scss'
+import '../styles/Header.scss';
+import { useState } from 'react';
+import companyIcon from '../assets/company.svg'
 
 const Header = () => {
+  const [currentCompany] = useState(localStorage.getItem('companyName'))
   return (
     <header>
       <div className="total-jobs">
@@ -12,7 +15,9 @@ const Header = () => {
             <h1>
             Zotola Connect
             </h1>
-            <div></div>
+            <div className='active-company'>
+              <img src={companyIcon} height="18" width="18" alt="" />{currentCompany}
+            </div>
           </div>
         </div>
       </div>

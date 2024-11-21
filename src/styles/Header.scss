@@ -2,6 +2,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 998;
+  .active-company {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: capitalize;
+  }
   .total-jobs {
     background: var(--primary-color);
     color: white;
@@ -32,6 +38,13 @@ header {
 }
 @media (max-width: 768px) {
   header {
+    .active-company {
+      font-size: 14px;
+      gap: 4px;
+      img {
+        width: 16px;
+      }
+    }
     .total-jobs {
       padding: 20px 0;
       .header-bar {
