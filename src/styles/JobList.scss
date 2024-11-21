@@ -148,6 +148,25 @@
   margin-top: 30vh;
   text-align: center;
   padding-inline: 20px;
+  .custom-select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    margin-top: 16px;
+    cursor: pointer;
+    text-align: center;
+    min-width: unset;
+    outline: none;
+    padding: 10px 14px;
+    display: flex;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
   h3 {
     font-family: "IBM Plex Serif", serif;
     font-weight: 600;
