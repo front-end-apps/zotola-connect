@@ -44,18 +44,16 @@ interface JobListItem {
 }
 
 const JobList = () => {
-  const [currentCompany] = useState(
-    localStorage.getItem("companyName") || ""
-  );
+  const [currentCompany] = useState(localStorage.getItem("companyName") || "");
   const [jobData, setJobData] = useState<JobPostingResponse[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [activeTeam, setActiveTeam] = useState<string>('');
+  const [activeTeam, setActiveTeam] = useState<string>("");
 
   const handleSearchJob = (value: string) => {
-    setSearchTerm('');
-    setActiveTeam('');
+    setSearchTerm("");
+    setActiveTeam("");
     setSearchTerm(value);
   };
 
@@ -96,16 +94,16 @@ const JobList = () => {
     );
   });
 
-  const handleSearchByTeam = (event: React.MouseEvent<HTMLLIElement>)=> {
-    const searchByTeam = event.currentTarget.getAttribute('data-attr') || '';
+  const handleSearchByTeam = (event: React.MouseEvent<HTMLLIElement>) => {
+    const searchByTeam = event.currentTarget.getAttribute("data-attr") || "";
     setSearchTerm(searchByTeam);
     setActiveTeam(searchByTeam);
-  }
+  };
 
-  const handleAllPositions = ()=>{
-    setSearchTerm('');
-    setActiveTeam('');
-  }
+  const handleAllPositions = () => {
+    setSearchTerm("");
+    setActiveTeam("");
+  };
 
   if (loading) {
     return <JobListSkeleton />;
@@ -123,22 +121,34 @@ const JobList = () => {
     return (
       <div className="content-not-found">
         <h3>No Job Postings Available</h3>
-        <h4>Try checking other companies or come back later for updates.</h4>
+
+        {currentCompany ? (
+          <h4>Try checking other companies or come back later for updates.</h4>
+        ) : (
+          <h4>Select a company to proceed, or check back later for updates.</h4>
+        )}
       </div>
     );
   }
 
-
   return (
     <>
-      <Toolbar search_job={handleSearchJob} search_value={searchTerm}/>
+      <Toolbar search_job={handleSearchJob} search_value={searchTerm} />
       <div className="container job-list-container">
         <ul className="tab-list">
-          <li className={activeTeam === '' ? 'active' : ''} onClick={handleAllPositions}>
+          <li
+            className={activeTeam === "" ? "active" : ""}
+            onClick={handleAllPositions}
+          >
             All Positions <span>{totalJobs()}</span>
           </li>
           {jobData.map((list: JobPostingResponse) => (
-            <li className={activeTeam === list.title ? 'active' : ''} onClick={handleSearchByTeam} key={list.title} data-attr={list.title}>
+            <li
+              className={activeTeam === list.title ? "active" : ""}
+              onClick={handleSearchByTeam}
+              key={list.title}
+              data-attr={list.title}
+            >
               {list.title} <span>{list.postings.length}</span>
             </li>
           ))}
@@ -151,10 +161,7 @@ const JobList = () => {
         ) : (
           <ul className="job-list">
             {filteredJobData.map((item: JobPostingResponse) => (
-              <li
-                key={item.title}
-                className="job-list-item"
-              >
+              <li key={item.title} className="job-list-item">
                 <h2 className="title">{item.title}</h2>
                 <ul className="list">
                   {item.postings.map((posting) => (
