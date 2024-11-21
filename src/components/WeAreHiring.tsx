@@ -38,7 +38,7 @@ const WeAreHiring = () => {
             Explore exciting career opportunities on our innovative platform.
           </label>
           {companySelected ? (
-            <a href="/join-us/" className="explore-button">
+            <a href="/join-us" className="explore-button">
               explore opportunities
               <div>→</div>
             </a>
