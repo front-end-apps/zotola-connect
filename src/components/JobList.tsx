@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchJobs } from "../../services";
 import "../styles/JoinUs.scss";
 import JobListSkeleton from "../skeleton/JobListSkeleton";
+import CompanyList from "../components/CompanyList";
 
 interface JobPostingResponse {
   title: string;
@@ -50,6 +51,7 @@ const JobList = () => {
   const [error, setError] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [activeTeam, setActiveTeam] = useState<string>("");
+  const [reloadScreen, setReloadScreen] = useState(false);
 
   const handleSearchJob = (value: string) => {
     setSearchTerm("");
@@ -79,11 +81,18 @@ const JobList = () => {
     }
   };
 
+  const selectCompany = (value: boolean) => {
+    setReloadScreen(value);
+  };
+
   useEffect(() => {
     if (currentCompany) {
       displayJobDetails(currentCompany);
     }
-  }, [currentCompany]);
+    if (reloadScreen) {
+      window.location.reload();
+    }
+  }, [currentCompany, reloadScreen]);
 
   const filteredJobData = jobData.filter((list) => {
     return (
@@ -125,7 +134,10 @@ const JobList = () => {
         {currentCompany ? (
           <h4>Try checking other companies or come back later for updates.</h4>
         ) : (
-          <h4>Select a company to proceed, or check back later for updates.</h4>
+          <>
+            <h4>Please select a company to proceed.</h4>
+            <CompanyList is_selected={selectCompany} />
+          </>
         )}
       </div>
     );
