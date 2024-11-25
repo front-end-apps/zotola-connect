@@ -97,9 +97,9 @@ const JobList = () => {
 
   const filteredJobData = jobData.filter((list) => {
     return (
-      list.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      list.title?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
       list.postings.some((posting) =>
-        posting.text?.toLowerCase().includes(searchTerm.toLowerCase())
+        posting.text?.toLowerCase().includes(searchTerm?.toLowerCase())
       )
     );
   });

@@ -236,6 +236,6 @@ export const getCountryName = (countryCode: string) => {
         'ZW': 'Zimbabwe'
       };
   
-    return countryMapping[countryCode.toUpperCase()] || countryCode; 
+    return countryMapping[countryCode?.toUpperCase()] || countryCode; 
   };
   
