@@ -5,7 +5,7 @@ import { fetchJobs } from "../../services";
 import "../styles/JoinUs.scss";
 import JobListSkeleton from "../skeleton/JobListSkeleton";
 import CompanyList from "../components/CompanyList";
-import {getCountryName} from '../utils'
+import { getCountryName } from "../utils";
 
 interface JobPostingResponse {
   title: string;
@@ -185,7 +185,10 @@ const JobList = () => {
                         <h3>{posting.text}</h3>
                         <div className="labels">
                           <span>{posting.categories.location}</span>
-                          <span>{getCountryName(posting.country)}</span>
+                          {posting.categories.location !==
+                            getCountryName(posting.country) && (
+                            <span>{getCountryName(posting.country)}</span>
+                          )}
                         </div>
                       </div>
                       <div className="list-item__right">
