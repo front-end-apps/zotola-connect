@@ -5,6 +5,7 @@ import { fetchJobs } from "../../services";
 import "../styles/JoinUs.scss";
 import JobListSkeleton from "../skeleton/JobListSkeleton";
 import CompanyList from "../components/CompanyList";
+import {getCountryName} from '../utils'
 
 interface JobPostingResponse {
   title: string;
@@ -96,9 +97,9 @@ const JobList = () => {
 
   const filteredJobData = jobData.filter((list) => {
     return (
-      list.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      list.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       list.postings.some((posting) =>
-        posting.text.toLowerCase().includes(searchTerm.toLowerCase())
+        posting.text?.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
   });
@@ -136,7 +137,7 @@ const JobList = () => {
         ) : (
           <h4>Please select a company to proceed.</h4>
         )}
-         <CompanyList is_selected={selectCompany} />
+        <CompanyList is_selected={selectCompany} />
       </div>
     );
   }
@@ -149,14 +150,15 @@ const JobList = () => {
           <li
             className={activeTeam === "" ? "active" : ""}
             onClick={handleAllPositions}
+            key="0all"
           >
             All Positions <span>{totalJobs()}</span>
           </li>
-          {jobData.map((list: JobPostingResponse) => (
+          {jobData.map((list: JobPostingResponse, index: number) => (
             <li
               className={activeTeam === list.title ? "active" : ""}
               onClick={handleSearchByTeam}
-              key={list.title}
+              key={index}
               data-attr={list.title}
             >
               {list.title} <span>{list.postings.length}</span>
@@ -170,8 +172,8 @@ const JobList = () => {
           </div>
         ) : (
           <ul className="job-list">
-            {filteredJobData.map((item: JobPostingResponse) => (
-              <li key={item.title} className="job-list-item">
+            {filteredJobData.map((item: JobPostingResponse, index: number) => (
+              <li key={index} className="job-list-item">
                 <h2 className="title">{item.title}</h2>
                 <ul className="list">
                   {item.postings.map((posting) => (
@@ -183,7 +185,7 @@ const JobList = () => {
                         <h3>{posting.text}</h3>
                         <div className="labels">
                           <span>{posting.categories.location}</span>
-                          <span>{posting.country}</span>
+                          <span>{getCountryName(posting.country)}</span>
                         </div>
                       </div>
                       <div className="list-item__right">
