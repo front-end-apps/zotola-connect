@@ -71,7 +71,7 @@ const JobList = () => {
     setError("");
     try {
       const data = await fetchJobs(companyId);
-      console.log("Job data response:", data);
+      // console.log("Job data response:", data);
       setJobData(data);
     } catch (error) {
       console.error("Error fetching job details:", error);
@@ -134,11 +134,9 @@ const JobList = () => {
         {currentCompany ? (
           <h4>Try checking other companies or come back later for updates.</h4>
         ) : (
-          <>
-            <h4>Please select a company to proceed.</h4>
-            <CompanyList is_selected={selectCompany} />
-          </>
+          <h4>Please select a company to proceed.</h4>
         )}
+         <CompanyList is_selected={selectCompany} />
       </div>
     );
   }
