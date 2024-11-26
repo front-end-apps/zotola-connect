@@ -17,9 +17,11 @@
       z-index: 1;
     }
   }
+  input {
+    padding: 0 16px;
+  }
   input,
   select {
-    padding: 0 16px;
     border: 0;
     outline: 0 none;
     font-size: 14px;
@@ -29,6 +31,9 @@
     max-width: 500px;
     background: #f7f7f7;
     color: #878596;
+  }
+  select {
+    padding: 0 26px 0 16px;
   }
   .dropdown-icon svg {
     position: absolute;
@@ -51,7 +56,7 @@
       min-width: auto;
     }
   }
-  .flex-1-sm{
+  .flex-1-sm {
     flex: 1;
   }
 }

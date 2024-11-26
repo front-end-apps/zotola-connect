@@ -13,7 +13,7 @@ const Header = () => {
         <div className="container">
           <div className="header-bar">
             <a href="/" className="button-outline">
-              ← Back
+              ← <span>Back</span>
             </a>
             <h1>
             Zotola Connect
