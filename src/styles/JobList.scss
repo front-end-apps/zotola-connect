@@ -45,11 +45,13 @@
         font-family: "Work Sans", sans-serif;
       }
       &.active {
-        background: var(--primary-color);
-        color: white;
+        font-weight: 600;
+        color: var(--primary-color);
+        box-shadow: inset 0px 0px 0px 1px var(--primary-color);
+        background-color: var(--primary-color-light);
         span {
-          color: white;
-          background-color: rgba(0, 0, 0, 0.1);
+          background-color: var(--primary-color-light);
+          color: var(--primary-color);
         }
       }
     }
@@ -216,6 +218,17 @@
         white-space: nowrap;
         padding: 10px 14px;
         display: flex;
+        border-radius: 0;
+        &.active{
+          box-shadow: inset 0px -2px 0px 0px var(--primary-color);
+          background-color: transparent;
+        }
+        &:not(.active){
+          span{
+            background-color: rgba(31, 140, 243, 0.1);
+          }
+        }
+       
       }
     }
     .job-list {
