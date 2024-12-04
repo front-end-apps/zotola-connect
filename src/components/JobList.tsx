@@ -194,11 +194,9 @@ const JobList = () => {
                       <div className="list-item__right">
                         <span>{posting.categories.commitment}</span>
                         <a
-                          href={posting.applyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                         href={`/${currentCompany}/job-description/${posting.id}`}
                         >
-                          Job Details
+                          View Details
                         </a>
                       </div>
                     </li>

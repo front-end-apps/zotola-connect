@@ -55,6 +55,13 @@ header {
     .total-jobs {
       padding: 20px 0;
       .header-bar {
+        .button-outline {
+          font-size: 14px;
+          min-width: auto;
+          span{
+            display: none;
+          }
+        }
         h1 {
           font-size: 16px;
           text-align: left;
@@ -62,10 +69,5 @@ header {
         }
       }
     }
-  }
-
-  .button-outline {
-    font-size: 14px;
-    min-width: auto;
   }
 }
