@@ -1,0 +1,115 @@
+.job-description-container {
+  font-weight: 400;
+  color: #45444a;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+  line-height: 150%;
+  .left-container {
+    flex: 1;
+    ul{
+        margin-top: 20px;
+    }
+    a{
+      color: #3f51b5;
+      text-decoration: none;
+    }
+    h3{
+      font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    margin-bottom: 12px;
+    font-family: "IBM Plex Serif", serif;
+    margin-top: 22px;
+    text-wrap: pretty;
+    }
+    b{
+      font-weight: 600;
+    }
+  }
+  .right-container {
+    width: 300px;
+    position: sticky;
+    top: 119px;
+    max-height: calc(100vh - 200px);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px 24px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  a.apply-now{
+    margin: 50px auto;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    max-width: 208px;
+    white-space: nowrap;
+    display: block;
+  }
+  .apply-now:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  .details-list{
+    border-bottom: 1px solid var(--primary-color-light);
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+  }
+  .details-list span{
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "IBM Plex Serif", sans-serif;
+    border-radius: 13px;
+    margin: 4px 12px 4px 0;
+    display: inline-block;
+    line-height: 14px;
+  }
+  .share-it{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: -1px 4px 12px 0px rgba(0, 0, 0, 0.1);
+    padding-block: 8px;
+    background-color: white;
+  }
+  .share-it a{
+    padding: 8px;
+    display: flex;
+  }
+}
+@media (max-width: 768px){
+  .job-description-container {
+    font-size: 14px;
+    .details-list {
+      span{
+        padding: 2px 8px;
+        font-size: 10px;
+        margin: 2px 5px 2px 0;
+      }
+    }
+    .left-container{
+      h3{
+        font-size: 18px;
+      }
+    }
+    a.apply-now{
+      max-width: none;
+     }
+  }
+}

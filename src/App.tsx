@@ -9,6 +9,7 @@ import WeAreHiring from "./components/WeAreHiring";
 import JoinUs from "./components/JoinUs";
 import Header from "./components/Header";
 import Footer from './components/Footer';
+import JobDescription from './components/JobDescription';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WeAreHiring />} />
         <Route path="/explore-opportunities" element={<JoinUs />} />
+        <Route path="/:companyName/job-description/:jobId" element={<JobDescription />} />
       </Routes>
       <FooterWrapper/>
     </Router>
