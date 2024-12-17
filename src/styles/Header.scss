@@ -5,14 +5,58 @@ header {
   .active-company {
     display: flex;
     align-items: center;
-    gap: 6px;
-    text-transform: capitalize;
-    a{
-      text-decoration: none;
-      color: inherit;
+    flex-direction: row-reverse;
+    position: relative;
+
+    img{
+      position: absolute;
+      right: 12px;
+    }
+    .custom-select{
+      font-family: "IBM Plex Serif";
+      min-width: unset;
+      background: transparent;
+      color: rgb(236 236 236 / 68%);
+      outline: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      appearance: none;
+      position: relative;
+      text-transform: capitalize;
+      width: 124px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 6px 32px 7px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.368627451);
+      border-radius: 3px;
       &:hover{
-        text-decoration: underline;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-color: transparent;
+        + .custom-select-tooltip{
+          visibility: visible;
+         }
       }
+    }
+    .custom-select-tooltip{
+      color: var(--primary-color);
+      background: rgb(255 255 255);
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 1px 4px;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: center;
+      visibility: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.368627451);
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      margin-top: -1px;
     }
   }
   .total-jobs {
@@ -25,15 +69,15 @@ header {
       align-items: center;
       justify-content: space-between;
       .button-outline {
-        color: #e5eff8;
+        color: rgb(236 236 236 / 68%);
+        font-family: "IBM Plex Serif";
         text-decoration: none;
-        border: 1px solid #e5eff8;
+        border: 1px solid rgba(255, 255, 255, 0.368627451);
         padding: 6px 10px 6px 8px;
         border-radius: 3px;
         min-width: 58px;
-        text-align: center;
-        display: flex;
-        align-items: center;
+        display: table;
+        font-size: 14px;
       }
       h1 {
         font-size: 38px;
@@ -57,15 +101,10 @@ header {
       .header-bar {
         .button-outline {
           font-size: 14px;
-          min-width: auto;
-          span{
-            display: none;
-          }
         }
         h1 {
-          font-size: 16px;
+          font-size: 20px;
           text-align: left;
-          padding-left: 16px;
         }
       }
     }
