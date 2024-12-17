@@ -26,7 +26,7 @@ const CompanyList: React.FC<CompanyListProps> = ({is_selected, selected_option})
       <option value="">Select Company</option>
       {getCompanyNames()}
     </select>
-     {selected_option &&  <span className="custom-select-tooltip">{selected_option}</span> }
+     {selected_option &&  <span className="custom-select-tooltip">{selected_option || 'Select Company'}</span> }
    </>
   );
 };
